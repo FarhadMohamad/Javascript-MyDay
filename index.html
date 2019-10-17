@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <h2>Welcome to My Day</h2>
+    <h2 id="MyDay">Welcome to My Day</h2>
     <button class="btnslide" onclick="slideUp('box');">Slide Up</button>
     <div id="box">
         <div class="tabs">
             <input type="radio" name="tabs" id="tabone" checked="checked">
             <label for="tabone">Today's task</label>
             <div id="tabb" class="tab">
-                <input type="text" id="txt" name="txt" value="Text here">
+                <input type="text" id="txt" name="txt" placeholder="Text here">
                 <button class="btn" href="#" onclick="changePageTitle();">Click to change the title</button>
                 <br>
                 <p id="datetime">datetime</p>

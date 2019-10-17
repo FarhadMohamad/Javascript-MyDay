@@ -37,7 +37,11 @@ function getNth(number) {
 
 //Displaying current date
 function showDateTime() {
-    document.getElementById("datetime").innerHTML = bold + daysOfWeek[todaysDate.getDay()] + " " + todaysDate.getDate() + getNth(todaysDate.getDate()) + " " + monthsOfYear[todaysDate.getMonth()] + " " + todaysDate.getFullYear();
+    document.getElementById("datetime").innerHTML = bold + daysOfWeek[todaysDate.getDay()] +
+        " " + todaysDate.getDate() +
+        getNth(todaysDate.getDate()) +
+        " " + monthsOfYear[todaysDate.getMonth()] +
+        " " + todaysDate.getFullYear();
 }
 
 
@@ -249,6 +253,7 @@ var tasks = [
 function changePageTitle() {
     var txt = document.getElementById('txt').value;
     document.getElementById('title').innerHTML = txt;
+    document.getElementById("MyDay").innerHTML = txt;
 }
 
 //Selecting a bagground color
