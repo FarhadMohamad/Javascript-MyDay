@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+    <meta charset="utf-8">
+    <title id="title">My Day</title>
+</head>
+
+<body>
+    <h2> Welcome to My Day</h2>
+    <button class="block" onclick="slideUp('box');">Slide Up</button>
+
+    <div id="box">
+        <div class="tabs">
+            <input type="radio" name="tabs" id="tabone" checked="checked">
+            <label for="tabone">Today's task</label>
+            <div id="tabb" class="tab">
+                <input type="text" id="txt" name="txt" value="Text here">
+                <button class="myButton" href="#" onclick="changePageTitle();">Click to change the title</button>
+                <br>
+                <p id="datetime">datetime</p>
+                <p id="time">time</p>
+                <table>
+
+                    <thread>
+                        <tr>
+                            <th>Time</th>
+                            <th>Description</th>
+                        </tr>
+                    </thread>
+                    <tbody id="tableData"></tbody>
+                </table>
+                <h3>Add new task:</h3>
+                <div>
+                    Description:
+                    <input type="text" id="addToday" name="txt">
+                    <button class="myButton" href="#" onclick="addTodayTask();">Add task</button>
+                </div>
+                <form>
+                    Select time: <input id="timePick" type="time" name="usr_time">
+                </form>
+                <h3>Change bagground color:</h3>
+                <select id=s1 onchange="clrchange(this.value);">
+                <option id="r3" onmouseover="cha(this.value);" value="white">No color</option>
+                <option id="r1" onmouseover="cha(this.id,this.value);" value="red">red</option>
+                <option id="r2" onmouseover="cha(this.value);" value="blue">blue</option>
+                <option id="r3" onmouseover="cha(this.value);" value="green">green</option>
+                <select>
+        </div>
+        <input type="radio" name="tabs" id="tabtwo">
+        <label for="tabtwo">Tomorrow's task</label>
+        <div class="tab">
+            <table>
+                <thread>
+                    <tr>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thread>
+                <tbody id="tableData2"></tbody>
+            </table>
+            <h3>Change bagground color:</h3>
+            <select id=s1 onchange="clrchange(this.value);">
+                <option id="r3" onmouseover="cha(this.value);" value="white">No color</option>
+                <option id="r1" onmouseover="cha(this.id,this.value);" value="red">red</option>
+                <option id="r2" onmouseover="cha(this.value);" value="blue">blue</option>
+                <option id="r3" onmouseover="cha(this.value);" value="green">green</option>
+                <select>
+        </div>
+        <script src="index.js"></script>      
+    </div>
+</div>
+<button class="block" onclick="slideDown('box');">Slide Down</button>
+</body>
+<script src="index.js"></script>
+</body>
+</html>
