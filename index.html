@@ -9,7 +9,7 @@
 
 <body>
     <h2>Welcome to My Day</h2>
-    <button class="block" onclick="slideUp('box');">Slide Up</button>
+    <button class="btnslide" onclick="slideUp('box');">Slide Up</button>
 
     <div id="box">
         <div class="tabs">
@@ -17,12 +17,11 @@
             <label for="tabone">Today's task</label>
             <div id="tabb" class="tab">
                 <input type="text" id="txt" name="txt" value="Text here">
-                <button class="myButton" href="#" onclick="changePageTitle();">Click to change the title</button>
+                <button class="btn" href="#" onclick="changePageTitle();">Click to change the title</button>
                 <br>
                 <p id="datetime">datetime</p>
                 <p id="time">time</p>
                 <table>
-
                     <thread>
                         <tr>
                             <th>Time</th>
@@ -35,7 +34,7 @@
                 <div>
                     Description:
                     <input type="text" id="addToday" name="txt">
-                    <button class="myButton" href="#" onclick="addTodayTask();">Add task</button>
+                    <button class="btn" href="#" onclick="addTodayTask();">Add task</button>
                 </div>
                 <form>
                     Select time: <input id="timePick" type="time" name="usr_time">
@@ -71,7 +70,7 @@
         <script src="index.js"></script>      
     </div>
 </div>
-<button class="block" onclick="slideDown('box');">Slide Down</button>
+<button class="btnslide" onclick="slideDown('box');">Slide Down</button>
 </body>
 <script src="index.js"></script>
 </body>

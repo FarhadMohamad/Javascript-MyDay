@@ -5,17 +5,20 @@ var todaysDate = new Date();
 var str = "Today is: ";
 var bold = str.bold();
 
+//sliding up function for the slide up button
 function slideUp(el) {
     var elem = document.getElementById(el);
     elem.style.transition = "all 2s ease-in-out";
     elem.style.height = "0px";
 }
 
+//sliding down function for the slide down button
 function slideDown(el) {
     var elem = document.getElementById(el);
     elem.style.transition = "all 2s ease-in-out";
     elem.style.height = "655px";
 }
+
 //Loading the functions below
 window.onload = (event) => {
     changePageTitle();
@@ -23,13 +26,12 @@ window.onload = (event) => {
     showTime();
     GetTodayTask(tasks);
     GetTomorrowTask(tasks);
-
 };
 
 //getting the st, nd, rd and th for days
 function getNth(number) {
-    var num = parseInt(number.toString().split('').pop());
-    var res = num == 1 ? "st" : num == 2 ? "nd" : num == 3 ? "rd" : num > 3 ? "th" : "";
+    var num = parseInt(number.toString().split(' ').pop());
+    var res = num == 1 ? "st" : num == 2 ? "nd" : num == 3 ? "rd" : num > 3 || num == 11 ? "th" : "";
     return res;
 }
 
@@ -70,6 +72,7 @@ function deleteToday(id) {
     tasks = tasks.filter(function(obj) {
         return obj.id !== id;
     });
+    //reloading the today's task table
     GetTodayTask(tasks);
 }
 
@@ -79,6 +82,7 @@ function deleteTomorrow(id) {
     tasks = tasks.filter(function(obj) {
         return obj.id !== id;
     });
+    //reloading the tomorrow's task table
     GetTomorrowTask(tasks);
 }
 
@@ -247,45 +251,31 @@ function changePageTitle() {
     document.getElementById('title').innerHTML = txt;
 }
 
-
-
 //Selecting a bagground color
 function clrchange(SelectedColor) {
     document.bgColor = SelectedColor;
 }
 
-
 //Getting the data of today's task and showing it in the table
 function GetTodayTask(tasks) {
     const tableBody = document.getElementById('tableData');
-
     let dataHtml = '';
-
     for (let task of tasks) {
         if (daysOfWeek[todaysDate.getDay()] === task.day) {
             dataHtml += `<tr><td>${task.time}</td><td>${task.description}</td><td><button onClick="deleteToday(${task.id})">remove</button></td></tr>`;
-
         }
     }
     tableBody.innerHTML = dataHtml;
-
 }
-
 
 //Getting the data of tomorrow's task and showing it in the table
 function GetTomorrowTask(tasks) {
     const tableBody = document.getElementById('tableData2');
-
     let dataHtml = '';
-
     for (let task of tasks) {
-
         if (daysOfWeek[todaysDate.getDay() + 1] === task.day) {
             dataHtml += `<tr><td>${task.time}</td><td>${task.description}</td><td><button onClick="deleteTomorrow(${task.id})">remove</button></td></tr>`;
         }
-
         tableBody.innerHTML = dataHtml;
-
     }
-
 }
