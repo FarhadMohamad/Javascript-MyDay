@@ -21,7 +21,6 @@ function slideDown(el) {
 
 //Loading the functions below
 window.onload = (event) => {
-    changePageTitle();
     showDateTime();
     showTime();
     GetTodayTask(tasks);
