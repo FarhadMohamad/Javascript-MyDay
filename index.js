@@ -61,7 +61,7 @@ function addTodayTask() {
         "description": getDescription
     };
     if (selectTime === "" || getDescription === "") {
-        alert("Please fill all the fields");
+        alert("Please fill all the input fields");
     } else {
         tasks.push(newTask);
 
