@@ -29,15 +29,25 @@ window.onload = (event) => {
 
 //getting the st, nd, rd and th for days
 function getNth(number) {
-    var num = parseInt(number.toString().split(' ').pop());
-    var res = num == 1 ? "st" : num == 2 ? "nd" : num == 3 ? "rd" : num > 3 || num == 11 ? "th" : "";
-    return res;
+    var j = number % 10,
+        k = number % 100;
+    if (j == 1 && k != 11) {
+        return number + "st";
+    }
+    if (j == 2 && k != 12) {
+        return number + "nd";
+    }
+    if (j == 3 && k != 13) {
+        return number + "rd";
+    }
+    return number + "th";
 }
+
 
 //Displaying current date
 function showDateTime() {
     document.getElementById("datetime").innerHTML = bold + daysOfWeek[todaysDate.getDay()] +
-        " " + todaysDate.getDate() +
+        " " +
         getNth(todaysDate.getDate()) +
         " " + monthsOfYear[todaysDate.getMonth()] +
         " " + todaysDate.getFullYear();
